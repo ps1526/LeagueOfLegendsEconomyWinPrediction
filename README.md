@@ -32,33 +32,14 @@ The dataset contains **150168 rows** and the following relevant columns that I w
 
 For each unique gameid, there were 12 rows, 5 for each team for individual stats and then 2 for team stats. For the data cleaning process, the documentation of some of the columns such as **dragons**, **firsttower**, and **firstdragon** were all team stats so they were left as NaN for individual player rows. As a result, for each gameid, I set the **dragons**, **firsttower**, and **firstdragon** attributes to the team stats. Additionally, some of the data collection methods for specific leagues were not as complete like the **goldat15**, **killsat15**, **golddiffat15**, **xpdiffat15**, **csdiffat15** columns. As a result, I did mean imputation based on the each of the positions because different positions have different roles which could on average affect the economy stats per player(i.e: a jungler who did not play as well of a game might have more gold compared to a support player who played really well). Doing this specific type of mean imputation, I was able to fill in the missing data based on the respective trends for each position rather than overgeneralizing. 
 
-<bound method DataFrame.to_markdown of                   gameid  result position league  goldat15  \
-0  ESPORTSTMNT01_2690210       0      top   LCKC    5025.0   
-1  ESPORTSTMNT01_2690210       0      jng   LCKC    5366.0   
-2  ESPORTSTMNT01_2690210       0      mid   LCKC    5118.0   
-3  ESPORTSTMNT01_2690210       0      bot   LCKC    5461.0   
-4  ESPORTSTMNT01_2690210       0      sup   LCKC    3836.0   
+| gameid               | result | position | league | goldat15 | firstdragon_team_summary | damagetochampions | killsat15 | earnedgold | golddiffat15 | earnedgoldshare | xpdiffat15 | csdiffat15 | dragons_team_summary | firsttower_team_summary |
+|----------------------|--------|----------|--------|----------|--------------------------|-------------------|-----------|------------|--------------|------------------|------------|------------|-----------------------|------------------------|
+| ESPORTSTMNT01_2690210 | 0      | top      | LCKC   | 5025.0   | 0.0                      | 15768.0           | 0.0       | 7164.0     | 391.0        | 0.253859         | 345.0      | 14.0       | 1.0                   | 1.0                    |
+| ESPORTSTMNT01_2690210 | 0      | jng      | LCKC   | 5366.0   | 0.0                      | 11765.0           | 2.0       | 5368.0     | 541.0        | 0.190220         | -275.0     | -11.0      | 1.0                   | 1.0                    |
+| ESPORTSTMNT01_2690210 | 0      | mid      | LCKC   | 5118.0   | 0.0                      | 14258.0           | 0.0       | 5945.0     | -475.0       | 0.210665         | 153.0      | 1.0        | 1.0                   | 1.0                    |
+| ESPORTSTMNT01_2690210 | 0      | bot      | LCKC   | 5461.0   | 0.0                      | 11106.0           | 2.0       | 6835.0     | -793.0       | 0.242201         | -1343.0    | -34.0      | 1.0                   | 1.0                    |
+| ESPORTSTMNT01_2690210 | 0      | sup      | LCKC   | 3836.0   | 0.0                      | 3663.0            | 1.0       | 2908.0     | 443.0        | 0.103054         | -497.0     | 7.0        | 1.0                   | 1.0                    |
 
-   firstdragon_team_summary  damagetochampions  killsat15  earnedgold  \
-0                       0.0            15768.0        0.0      7164.0   
-1                       0.0            11765.0        2.0      5368.0   
-2                       0.0            14258.0        0.0      5945.0   
-3                       0.0            11106.0        2.0      6835.0   
-4                       0.0             3663.0        1.0      2908.0   
-
-   golddiffat15  earnedgoldshare  xpdiffat15  csdiffat15  \
-0         391.0         0.253859       345.0        14.0   
-1         541.0         0.190220      -275.0       -11.0   
-2        -475.0         0.210665       153.0         1.0   
-3        -793.0         0.242201     -1343.0       -34.0   
-4         443.0         0.103054      -497.0         7.0   
-
-   dragons_team_summary  firsttower_team_summary  
-0                   1.0                      1.0  
-1                   1.0                      1.0  
-2                   1.0                      1.0  
-3                   1.0                      1.0  
-4                   1.0                      1.0  >
 
 
 
