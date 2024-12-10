@@ -49,3 +49,20 @@ As a result, I did mean imputation based on the each of the positions because di
 </center>
 
 
+
+##Univariate Data Analysis## 
+<iframe
+  src="plts/distribution_earnedgoldshare.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+##Bivariate Data Analysis##
+<iframe
+  src="plts/golddiffat15_vs_csdiffat15.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
