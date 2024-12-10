@@ -36,6 +36,8 @@ As a result, for each gameid, I set the **dragons**, **firsttower**, and **first
 
 As a result, I did mean imputation based on the each of the positions because different positions have different roles which could on average affect the economy stats per player(i.e: a jungler who did not play as well of a game might have more gold compared to a support player who played really well). Doing this specific type of mean imputation, I was able to fill in the missing data based on the respective trends for each position rather than overgeneralizing. 
 
+<center>
+
 | gameid               | result | position | league | goldat15 | firstdragon_team_summary | damagetochampions | killsat15 | earnedgold | golddiffat15 | earnedgoldshare | xpdiffat15 | csdiffat15 | dragons_team_summary | firsttower_team_summary |
 |----------------------|--------|----------|--------|----------|--------------------------|-------------------|-----------|------------|--------------|------------------|------------|------------|-----------------------|------------------------|
 | ESPORTSTMNT01_2690210 | 0      | top      | LCKC   | 5025.0   | 0.0                      | 15768.0           | 0.0       | 7164.0     | 391.0        | 0.253859         | 345.0      | 14.0       | 1.0                   | 1.0                    |
@@ -44,6 +46,6 @@ As a result, I did mean imputation based on the each of the positions because di
 | ESPORTSTMNT01_2690210 | 0      | bot      | LCKC   | 5461.0   | 0.0                      | 11106.0           | 2.0       | 6835.0     | -793.0       | 0.242201         | -1343.0    | -34.0      | 1.0                   | 1.0                    |
 | ESPORTSTMNT01_2690210 | 0      | sup      | LCKC   | 3836.0   | 0.0                      | 3663.0            | 1.0       | 2908.0     | 443.0        | 0.103054         | -497.0     | 7.0        | 1.0                   | 1.0                    |
 
-
+</center>
 
 
