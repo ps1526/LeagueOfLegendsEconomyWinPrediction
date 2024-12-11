@@ -77,23 +77,13 @@ In summary, while creep score—essentially the score for killing jungle mobs—
 
 ## Grouped Data
 
-<bound method DataFrame.to_markdown of              goldat15              golddiffat15             killsat15  \
-result              0            1            0           1         0   
-position                                                                
-bot       5307.950034  5715.978887  -408.028852  408.028852  0.767394   
-jng       4985.381275  5275.545198  -290.163923  290.163923  1.014166   
-mid       5304.766245  5606.789583  -302.023338  302.023338  0.736410   
-sup       3398.915177  3585.337412  -186.422235  186.422235  0.314975   
-top       5096.710567  5375.986382  -279.275815  279.275815  0.521953   
-
-                    
-result           1  
-position            
-bot       1.162375  
-jng       1.388207  
-mid       1.076243  
-sup       0.426788  
-top       0.740144  >
+| position   |   ('goldat15', 0) |   ('goldat15', 1) |   ('golddiffat15', 0) |   ('golddiffat15', 1) |   ('killsat15', 0) |   ('killsat15', 1) |
+|:-----------|------------------:|------------------:|----------------------:|----------------------:|-------------------:|-------------------:|
+| bot        |           5307.95 |           5715.98 |              -408.029 |               408.029 |           0.767394 |           1.16237  |
+| jng        |           4985.38 |           5275.55 |              -290.164 |               290.164 |           1.01417  |           1.38821  |
+| mid        |           5304.77 |           5606.79 |              -302.023 |               302.023 |           0.73641  |           1.07624  |
+| sup        |           3398.92 |           3585.34 |              -186.422 |               186.422 |           0.314975 |           0.426788 |
+| top        |           5096.71 |           5375.99 |              -279.276 |               279.276 |           0.521953 |           0.740144 |
 
 As we can see here from the pivot table which showcases the comparison between goldat15, golddiffat1, and killsat15 based on the end result and position shows that junglers on average have higher kills compared to other groups and supports have less kills compared to other groups. Also clearly, the number of kills seems to have more of an impact compared to economy stats which is a given but we can see that overall junglers seem to have the most impact in dictating both economic stats/kills and potentially also the outcome of the match. 
 
