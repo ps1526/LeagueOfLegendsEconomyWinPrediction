@@ -104,10 +104,25 @@ Alternative Hypothesis (H1):
 
 There is a statistically significant difference in the distribution of gold at 15 between winning and losing matches meaning that the gold after 15 minutes values differ between wins and losses in a way that cannot be explained by random chance
 
-Test Statistic: Difference in Means
+Test Statistic: Difference in Means. This is a good test statistic since we are measuring a quantitative distribution of the amount of gold after 15 minutes as compared to using a statistic like Total Variation Distance which is meant for categorical distributions. 
 
+ <iframe
+    src="plts/hypothesistest.html"
+    width="800"
+    height="600"
+    frameborder="0"
+  ></iframe>
+
+  Significance Level: 0.05
+  Calculated p-val using Difference in Means test statistic: 0.00
+
+  As we can see, our calculate p-val is less than 0.05 which means that we reject our null hypothesis of the distribution of gold at 15 minutes is the same for winning and losing matches. Additionally, we can also see that there is a difference in the distribution between gold for winning and losing from our plot as well as on average winning players and teams have more gold after 15 minutes. 
 
 # Framing a Prediction Problem
+
+The problem that I looked at was using both individual and team economic factors at 15 minutes to try and predict if an individual was on a winning or losing team(response variable). This is a binary classification problem where 0 corresponds to a loss and 1 corresponds to a win. Specifically, I used a Logistic Regression model due to it being ideal for binary classification problems like predicting whether a player is on a winning or losing team, as it outputs probabilities and provides interpretable coefficients. 
+
+Additionally, I used accuracy as the main scoring metric because it's a simple yet intuitive metric that measures the proportion of correct predictions and in the dataset there is no class imbalance for wins and losses, making accuracy more preferable over other evaluation metrics. 
 
 
 # Baseline Model
