@@ -85,7 +85,7 @@ In summary, while creep score—essentially the score for killing jungle mobs—
 | sup        |           3398.92 |           3585.34 |              -186.422 |               186.422 |           0.314975 |           0.426788 |
 | top        |           5096.71 |           5375.99 |              -279.276 |               279.276 |           0.521953 |           0.740144 |
 
-As we can see here from the pivot table which showcases the comparison between goldat15, golddiffat1, and killsat15 based on the end result and position shows that junglers on average have higher kills compared to other groups and supports have less kills compared to other groups. Also clearly, the number of kills seems to have more of an impact compared to economy stats which is a given but we can see that overall junglers seem to have the most impact in dictating both economic stats/kills and potentially also the outcome of the match. 
+As we can see here from the pivot table which showcases the comparison between goldat15, golddiffat1, and killsat15 based on the end result(0 is a loss and 1 is a win) and position shows that junglers on average have higher kills compared to other groups and supports have less kills compared to other groups. Also clearly, the number of kills seems to have more of an impact compared to economy stats which is a given but we can see that overall junglers seem to have the most impact in dictating both economic stats/kills and potentially also the outcome of the match. 
 
 On the other hand, mid and bot roles are strong in gold accumulation, while junglers stand out in kill involvement and win rates. Support roles have the lowest gold and kill metrics, but this is expected due to their utility-focused playstyle. 
 
