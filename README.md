@@ -93,6 +93,21 @@ This all makes sense when you consider the roles of both junglers and support ch
 
 # Assessment of Missingness
 
+I do not think that there might be any columns that are NMAR because they would all be MAR to either the league column which would correlate to maybe a difference in technology and tracking systems for more competitive versus amateur leagues and then also the column for data completeness because it specifically states that if the data is complete or not for that row which would make that MAR instead of NMAR. However, I would need to dive deeper into what makes the data compelete as well as the sources of data collection during games and live matches to see if there were any further explanations for missingness in the data 
+
+A column I wanted to test out for missingness was the *goldat15* column. After performing permutations tests to determine whether or not the data was MAR(Missing at Random) for other columns like earnedgoldshare and csdiffat15, I got that out of the columns that I tested: 'firsttower', 'firstdragon', 'dragons', 'earnedgoldshare','csdiffat15', 'killsat15', 'xpdiffat15', that all these columns except for csdiffat15 and xpdiffat15 were MAR as their p-values were all below 0.05.
+
+For instance, here is the graph with the distributions of the goldat15 column when earnedgolshare is and is not present
+
+
+ <iframe
+    src="plts/goldat15mar1.html"
+    width="800"
+    height="600"
+    frameborder="0"
+  ></iframe>
+
+
 
 # Hypothesis Testing 
 
