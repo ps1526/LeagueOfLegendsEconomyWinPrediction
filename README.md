@@ -165,6 +165,69 @@ I believe the model is **moderate** because:
 # Final Model
 To improve the base model , I would want to consider adding more features specifically interaction features like the gold amount times the kills stat at 15 minutes or the earned gold times the xp difference at 15 minutes. Additionally, I would want to create aggregate features like computing the z-score of each numerical feature for each league respectively to give the model more context regarding how the individual value compares to the mean. 
 
+## Feature Transformations
+
+### 1. League-Specific Z-Scores
+- **Purpose**: Normalize performance within league contexts
+- **Rationale**: Accounts for varying competitive standards across different leagues
+- **Method**: Standardize features like `goldat15`, `killsat15` using league-specific mean and standard deviation
+
+### 2. Percentile Ranks
+- **Purpose**: Provide non-linear performance representation
+- **Benefits**: 
+ - Robust ranking less sensitive to outliers
+ - Clear view of team/player standing within league
+
+### 3. Interaction Features
+- **Interactions Created**:
+ - `goldat15_killsat15_interaction`: Captures early game economic aggression
+ - `earnedgold_xpdiff_interaction`: Reveals economic resource conversion to competitive advantage
+
+### 4. Region Categorization
+- **Approach**: Hierarchical league categorization
+- **Tiers**: 4 levels representing competitive strength
+- **Insight**: Captures implicit skill differences between leagues
+
+### Hyperparameter Tuning
+- **Method**: Grid Search CV with k=5 folds
+- **Key Parameters**:
+- `classifier__penalty`: `['l2']`
+- `classifier__C`: `[0.001, 0.01, 0.1, 1, 10, 100]`
+- `classifier__solver`: `['lbfgs']`
+- `classifier__class_weight`: `[None, 'balanced']`
+- `classifier__multi_class`: `['ovr', 'multinomial']`
+
+Overall the best model was 
+```python
+best_params = {
+    'classifier__C': 10,
+    'classifier__class_weight': None,
+    'classifier__multi_class': 'ovr',
+    'classifier__penalty': 'l2',
+    'classifier__solver': 'lbfgs'
+}
+```
+with 'train_accuracy': 0.8346687180306905 and 'test_accuracy': 0.8363570971867008 which is better than the 0.79 that the base model was showing. 
+
+Overall, the new model does predict slightly better than the baseline model and overall I am happy with around 83.5% accuracy due to League of Legends being a game where so many different factors can influence the outcome of the match even just in the economy attributes of the game. Additionally, here is the confusion matrix for the model:
+
+|               | Predicted Negative | Predicted Positive |
+|---------------|--------------------|--------------------|
+| **Actual Negative** | 10020              | 2422               |
+| **Actual Positive** | 1673               | 10909              |
+
 
 # Fairness Analysis
+For my fairness analysis, I wanted to see how the model would predict based on the different levels of leagues that existed in the dataset because the quality of the data is better in the higher leagues where there is more funding and money to collected data as compared to the lower ranked leagues and challenger events. 
+
+Null Hypothesis: ur model is fair. Its precision for top tier leagues and bottom tier leagues are roughly the same, and any differences are due to random chance.
+
+Alternative Hypothesis: Our model is unfair. Its precision for bottom tier leagues is lower than the precision for top tier leagues
+
+Test Statistic: Difference in Means
+
+Significance Level: 0.05
+
+Using a permutation test and the difference in means metric, I got the p-value of 0.958 which is much higher than the significance level meaning that we fail to reject the null hypothesis. 
+
 
