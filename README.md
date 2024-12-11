@@ -126,6 +126,50 @@ Additionally, I used accuracy as the main scoring metric because it's a simple y
 
 
 # Baseline Model
+## Model Description
+
+I implemented a Logistic Regression classifier to predict game outcomes (`result`). The dataset includes:
+
+- **Quantitative Features** (6): `goldat15`, `killsat15`, `golddiffat15`, `earnedgoldshare`, `xpdiffat15`, and `csdiffat15`.
+- **Categorical (Nominal) Features** (5): `firstdragon_team_summary`, `dragons_team_summary`, `firsttower_team_summary`, `position`, and `league`.
+
+### Preprocessing
+- Quantitative features were standardized using `StandardScaler` for consistency in scale.
+- Categorical features were one-hot encoded using `OneHotEncoder` to convert them into binary indicators.
+- A `ColumnTransformer` and pipeline were used to streamline preprocessing and modeling.
+
+---
+
+## Model Performance
+
+The model was evaluated on a 20% test set, achieving:
+- **Accuracy**:   0.79 .
+- **Classification Report**: Provided precision, recall, and F1-scores.
+- ### Confusion Matrix
+
+|                | Predicted Negative | Predicted Positive |
+|----------------|--------------------|--------------------|
+| **Actual Negative** | 9652               | 2790               |
+| **Actual Positive** | 2432               | 10150              |
+
+---
+
+## Model Evaluation
+
+I believe the model is **[good/moderate/needs improvement]** because:
+- Strengths: Logistic Regression is interpretable and works well for linear relationships. The accuracy and classification metrics suggest it captures key patterns effectively.
+- Weaknesses: High false positives/negatives or complex feature interactions may limit performance.
+
+---
+
+## Next Steps
+
+To improve, I would:
+1. Explore non-linear models like Random Forest or Gradient Boosted Trees.
+2. Perform feature selection or engineering.
+3. Address any class imbalance using techniques like SMOTE or class weights.
+
+This serves as a solid baseline for further development.
 
 
 # Final Model
