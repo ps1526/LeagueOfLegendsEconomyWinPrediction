@@ -144,8 +144,7 @@ I implemented a Logistic Regression classifier to predict game outcomes (`result
 
 The model was evaluated on a 20% test set, achieving:
 - **Accuracy**:   0.79 .
-- **Classification Report**: Provided precision, recall, and F1-scores.
-- ### Confusion Matrix
+- **Confusion Matrix**
 
 |                | Predicted Negative | Predicted Positive |
 |----------------|--------------------|--------------------|
@@ -156,23 +155,15 @@ The model was evaluated on a 20% test set, achieving:
 
 ## Model Evaluation
 
-I believe the model is **[good/moderate/needs improvement]** because:
+I believe the model is **moderate** because:
 - Strengths: Logistic Regression is interpretable and works well for linear relationships. The accuracy and classification metrics suggest it captures key patterns effectively.
-- Weaknesses: High false positives/negatives or complex feature interactions may limit performance.
+- Weaknesses: It is not super accurate even with some engineered features. I would like at least a 81% accuracy classifier that is still able to generalize data. 
 
----
 
-## Next Steps
-
-To improve, I would:
-1. Explore non-linear models like Random Forest or Gradient Boosted Trees.
-2. Perform feature selection or engineering.
-3. Address any class imbalance using techniques like SMOTE or class weights.
-
-This serves as a solid baseline for further development.
 
 
 # Final Model
+To improve the base model , I would want to consider adding more features specifically interaction features like the gold amount times the kills stat at 15 minutes or the earned gold times the xp difference at 15 minutes. Additionally, I would want to create aggregate features like computing the z-score of each numerical feature for each league respectively to give the model more context regarding how the individual value compares to the mean. 
 
 
 # Fairness Analysis
